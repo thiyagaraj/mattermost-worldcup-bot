@@ -11,6 +11,24 @@ This bot uses the undocumented FIFA API's to report on World Cup matches. It wil
 ### Sample
 [![sample](https://github.com/ImDevinC/wc-watcher/raw/master/ss.png)](#sample)
 
+### Quick start using docker
+A simple `Dockerfile` is including for deploying this in a docker container.
+1. Clone the repo and navigate into the directory
+1. Make necessary changes to private.py (see instructions below, at the minimum your webhook url has to be updated)
+1. Build the docker image locally by running the following command, you can change the image name to your liking
+```
+docker build -t thiyag/wc-watcher .
+```
+1. Once the image is built, run the process in a new container, this runs as a daemon (`-d`)
+```
+docker run -d --name wcbot thiyag/wc-watcher
+```
+1. To update the code and or config, rebuild the image, and before issuing `docker run`, delete/remove the existing container
+```
+docker stop wcbot
+docker rm wcbot
+```
+
 ### Usage
 1. Setup a new Mattermost incoming webhook and retain the url to use in `WEBHOOK_URL` below
 1. Copy `private.py.config` to `private.py`
