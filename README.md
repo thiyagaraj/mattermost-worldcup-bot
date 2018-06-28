@@ -12,7 +12,7 @@ This bot uses the undocumented FIFA API's to report on World Cup matches. It wil
 [![sample](https://github.com/ImDevinC/wc-watcher/raw/master/ss.png)](#sample)
 
 ### Quick start using docker
-A simple `Dockerfile` is including for deploying this in a docker container.
+A simple `Dockerfile` is included for deploying this in a docker container.
 1. Clone the repo and navigate into the directory
 1. Make necessary changes to private.py (see instructions below, at the minimum your webhook url has to be updated)
 1. Build the docker image locally by running the following command, you can change the image name to your liking
