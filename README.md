@@ -1,5 +1,5 @@
 # Mattermost World Cup Bot
-**NOTE:** This is a fork of [ImDevinC/wc-watcher](https://github.com/ImDevinC/wc-watcher) which is updated for mattermost and dockerized(pending)
+**NOTE:** This is a fork of [ImDevinC/wc-watcher](https://github.com/ImDevinC/wc-watcher) which is updated for mattermost and dockerized(I didnt want to mess with my Pyhton 2.7 installation and/or systemd settings for this process :-P)
 
 This bot uses the undocumented FIFA API's to report on World Cup matches. It will check every 60 seconds for new events. The following events are reported:
 + Goals scored
