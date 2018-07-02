@@ -212,7 +212,7 @@ def build_event(player_list, current_match, event):
     extraInfo = False
     if (event['type'] == EventType.GOAL_SCORED.value or event['type'] == EventType.FREE_KICK_GOAL.value
         or event['type'] == EventType.FREE_KICK_GOAL.value):
-        event_message = ':soccer: {} GOOOOAL! {} *{}:{}* {}'.format(event['time'], current_match['homeTeam'], event['home_goal'], event['away_goal'], current_match['awayTeam'])
+        event_message = '## :soccer: {} :tada: GOOOOAL! :tada: {} *{}:{}* {}'.format(event['time'], current_match['homeTeam'], event['home_goal'], event['away_goal'], current_match['awayTeam'])
         extraInfo = True
     elif event['type'] == EventType.YELLOW_CARD.value:
         event_message = ':yellow_card_new: {} Yellow card.'.format(event['time'])
@@ -262,19 +262,19 @@ def build_event(player_list, current_match, event):
         event_message = ':clock12: The match between {} and {} has ended. {} *{}:{}* {}.'.format(current_match['homeTeam'], current_match['awayTeam'],
         current_match['homeTeam'], event['home_goal'], event['away_goal'], current_match['awayTeam'])
     elif event['type'] == EventType.OWN_GOAL.value:
-        event_message = ':soccer: {} Own Goal! {} *{}:{}* {}'.format(event['time'], current_match['homeTeam'], event['home_goal'], event['away_goal'], current_match['awayTeam'])
+        event_message = '## :soccer: {} Own Goal! :sob: {} *{}:{}* {}'.format(event['time'], current_match['homeTeam'], event['home_goal'], event['away_goal'], current_match['awayTeam'])
         extraInfo = True
     elif event['type'] == EventType.PENALTY_GOAL.value:
         if event['period'] == Period.PENALTY_SHOOTOUT.value:
-            event_message = ':soccer: Penalty goal! {} *{} ({}):{} ({})* {}'.format(current_match['homeTeam'], event['home_goal'], event['home_pgoals'], event['away_goal'], event['away_pgoals'], current_match['awayTeam'])
+            event_message = '## :soccer: Penalty goal! {} *{} ({}):{} ({})* {}'.format(current_match['homeTeam'], event['home_goal'], event['home_pgoals'], event['away_goal'], event['away_pgoals'], current_match['awayTeam'])
         else:
-            event_message = ':soccer: {} Penalty goal! {} *{}:{}* {}'.format(event['time'], current_match['homeTeam'], event['home_goal'], event['away_goal'], current_match['awayTeam'])
+            event_message = '## :soccer: {} Penalty goal! {} *{}:{}* {}'.format(event['time'], current_match['homeTeam'], event['home_goal'], event['away_goal'], current_match['awayTeam'])
         extraInfo = True
     elif event['type'] == EventType.PENALTY_MISSED.value or event['type'] == EventType.PENALTY_MISSED_2.value:
         if event['period'] == Period.PENALTY_SHOOTOUT.value:
-            event_message = ':no_entry_sign: Penalty missed! {} *{} ({}):{} ({})* {}'.format(current_match['homeTeam'], event['home_goal'], event['home_pgoals'], event['away_goal'], event['away_pgoals'], current_match['awayTeam'])
+            event_message = '## :no_entry_sign: Penalty missed! {} *{} ({}):{} ({})* {}'.format(current_match['homeTeam'], event['home_goal'], event['home_pgoals'], event['away_goal'], event['away_pgoals'], current_match['awayTeam'])
         else:
-            event_message = ':no_entry_sign: {} Penalty missed!'.format(event['time'])
+            event_message = '## :no_entry_sign: {} Penalty missed!'.format(event['time'])
         extraInfo = True
     elif EventType.has_value(event['type']):
         event_message = None
